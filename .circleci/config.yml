@@ -17,6 +17,10 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+  job-step-2:
+    docker:
+      - image: cimg/base:stable
+    steps:
       - run:
           name: "job 2"
           command: "error !
@@ -27,3 +31,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - job-step-2
